@@ -1,4 +1,26 @@
 ---
 label: Employees
 hide_body: false
-fields: []
+fields:
+- name: name
+  type: text
+  config:
+    required: false
+  label: Name
+  description: Name of the employee
+- name: employee_description
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Employee description
+  description: A short description of the employee
+- name: employee_image
+  type: file
+  config:
+    maxSize: 64
+  label: Employee image
+  description: picture of the employee
