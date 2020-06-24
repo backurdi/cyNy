@@ -24,3 +24,5 @@ fields:
     maxSize: 64
   label: Employee image
   description: picture of the employee
+pages:
+- employees/Ghazwan.md
