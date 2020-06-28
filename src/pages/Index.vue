@@ -1,5 +1,5 @@
 <template>
-  <Layout>
+  <Layout index="true">
     <Hero />
     <WhyUs />
     <Services />
@@ -15,7 +15,7 @@ import Action from "../components/Action";
 
 export default {
   metaInfo: {
-    title: "Gridsome starter bootstrap"
+    title: "Cy Revision"
   },
 
   components: {
@@ -30,5 +30,8 @@ export default {
 <style lang="scss">
 .hero {
   margin-bottom: 200px;
+}
+.sub-page-container {
+  padding: 0 50px;
 }
 </style>

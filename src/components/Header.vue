@@ -1,6 +1,6 @@
 <template>
   <header class="header">
-    <b-navbar class="p-0" toggleable="md" type="light">
+    <b-navbar class="p-0 nav-bar-container" toggleable="md" type="light">
       <b-navbar-brand>
         <g-link class="logo-home logo-desktop" to="/">{{ $static.metadata.siteName }}</g-link>
         <g-link class="logo-home logo–mobile" to="/">
@@ -10,15 +10,17 @@
       <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
       <b-collapse is-nav id="nav_collapse">
         <b-navbar-nav class="ml-auto">
-          <g-link class="nav--link" to="/about">About</g-link>
+          <g-link class="nav--link" to="/">Hjem</g-link>
+          <g-link class="nav--link" to="/about">Om os</g-link>
           <g-link class="nav--link" to="/blog">Blog</g-link>
-          <g-link class="nav--link" to="/contact">Contact</g-link>
+          <g-link class="nav--link" to="/contact">Kontakt</g-link>
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
   </header>
 </template>
-
+<script>
+</script>
 <static-query>
 query {
   metadata {
@@ -36,13 +38,14 @@ nav {
 .header {
   position: absolute;
   z-index: 10;
-  width: 90%;
+  width: 100%;
+  padding: 10px 10%;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 100px;
 }
 
 .logo-home {

@@ -1,7 +1,7 @@
 <template>
   <div class="layout">
     <div id="content-wrapper">
-      <Header />
+      <Header :style="[index ? style1 : style2]" />
       <slot />
     </div>
     <Footer />
@@ -13,9 +13,21 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 
 export default {
+  props: ["index"],
   components: {
     Footer,
     Header
+  },
+  created: () => {},
+  data() {
+    return {
+      style1: {
+        background: "transparent"
+      },
+      style2: {
+        background: "#0a0540"
+      }
+    };
   }
 };
 </script>
