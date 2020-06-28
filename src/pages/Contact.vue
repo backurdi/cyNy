@@ -96,9 +96,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.contact {
-  margin-top: 100px;
-}
+@import "../assets/styles/general.scss";
 .contact-image {
   display: block;
   margin: auto;

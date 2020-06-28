@@ -31,7 +31,4 @@ export default {
 .hero {
   margin-bottom: 200px;
 }
-.sub-page-container {
-  padding: 0 50px;
-}
 </style>

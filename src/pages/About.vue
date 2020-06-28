@@ -56,12 +56,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.about {
-  margin-top: 100px;
-
-  h1 {
-    text-align: center;
-  }
+@import "../assets/styles/general.scss";
+h1 {
+  text-align: center;
 }
 
 .cy-story {
