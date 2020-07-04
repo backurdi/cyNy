@@ -28,6 +28,19 @@ module.exports = {
       },
     },
     {
+      use: "gridsome-plugin-flexsearch",
+      options: {
+        searchFields: ["title"],
+        collections: [
+          {
+            typeName: "BlogPost",
+            indexName: "BlogPost",
+            fields: ["id", "path", "title", "excerpt", "image"],
+          },
+        ],
+      },
+    },
+    {
       use: "@gridsome/plugin-google-analytics",
       options: {
         id: "UA-72659574-10",
