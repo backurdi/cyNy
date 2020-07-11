@@ -34,7 +34,6 @@ module.exports = {
         collections: [
           {
             typeName: "BlogPost",
-            indexName: "BlogPost",
             fields: ["id", "path", "title", "excerpt", "image"],
           },
         ],

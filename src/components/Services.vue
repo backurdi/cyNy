@@ -2,13 +2,21 @@
   <div class="services">
     <h1>Ydelser</h1>
     <div class="content">
-      <div v-for="(data, index) of servicesData" :key="index">
-        <div class="title-image" :style="{backgroundImage: `url(${data.titleImage})`}">
-          <h3>{{data.title}}</h3>
+      <div v-for="(data, index) of servicesData" :key="index" class="service-wrapper">
+        <div v-if="index%2 !== 0" class="service-image-container">
+          <img :src="data.titleImage" alt />
         </div>
-        <ul>
-          <li v-for="(listItem, index) of data.listItems" :key="index">{{listItem}}</li>
-        </ul>
+        <div>
+          <div class="title-image">
+            <h3>{{data.title}}</h3>
+          </div>
+          <ul>
+            <li v-for="(listItem, index) of data.listItems" :key="index">{{listItem}}</li>
+          </ul>
+        </div>
+        <div v-if="index%2 === 0" class="service-image-container">
+          <img :src="data.titleImage" alt />
+        </div>
       </div>
     </div>
   </div>
@@ -97,19 +105,41 @@ export default {
     display: flex;
     flex-wrap: wrap;
     width: 90%;
-    justify-content: center;
+    max-width: 900px;
+    flex-direction: column;
     margin-bottom: 200px;
 
-    & > div {
-      flex: 1 0 50%;
+    & > .service-wrapper {
+      padding: 40px;
+      flex: 1 0;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 40px;
 
-      h3 {
-        text-align: center;
+      ul {
+        padding: 0;
+        li {
+          list-style: none;
+        }
+      }
+
+      & :nth-child(even) {
+        h3 {
+          text-align: right;
+        }
+
+        ul {
+          li {
+            text-align: right;
+          }
+        }
       }
     }
 
-    .title-image {
-      background-repeat: no-repeat;
+    .service-image-container {
+      img {
+        width: 100px;
+      }
     }
   }
 }

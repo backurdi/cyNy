@@ -1,10 +1,10 @@
 <template>
   <Layout>
     <div class="contact sub-page-container">
-      <h1 class="mb-4">Contact</h1>
-      <div>
-        <img class="contact-image mb-4" src="../../uploads/email.svg" />
+      <div class="contact-container">
+        <div class="contact-info"></div>
         <b-form
+          class="contact-form"
           name="contact"
           method="post"
           @submit.prevent="handleSubmit"
@@ -12,6 +12,10 @@
           data-netlify="true"
           data-netlify-honeypot="bot-field"
         >
+          <h2>Kontakt os på</h2>
+          <h3 class="adress">Borups allé 117, 2000 Frederiksberg</h3>
+          <h3 class="number">+45 71 99 28 37</h3>
+          <h3 class="email">kontakt@cyrevision.dk</h3>
           <input type="hidden" name="name" value="contact" />
           <p hidden>
             <label>
@@ -19,6 +23,7 @@
               <input name="bot-field" />
             </label>
           </p>
+          <h2>Eller udfyld og vi kontakter dig</h2>
           <b-form-group id="input-group-2" label="Name:" label-for="form-name">
             <b-form-input
               id="name"
@@ -97,10 +102,36 @@ export default {
 
 <style scoped lang="scss">
 @import "../assets/styles/general.scss";
-.contact-image {
-  display: block;
-  margin: auto;
-  width: 90%;
-  max-width: 500px;
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .contact-info {
+    text-align: center;
+    flex-direction: column;
+  }
+
+  .contact-form {
+    width: 100%;
+    max-width: 700px;
+    background: #0a0540;
+    padding: 40px;
+    border-radius: 20px;
+    color: #fff;
+    margin-bottom: 40px;
+
+    h3 {
+      text-align: center;
+      font-size: 1rem;
+    }
+
+    h2 {
+      font-size: 26px;
+      margin-bottom: 20px;
+      text-align: center;
+      border-bottom: 1px solid white;
+    }
+  }
 }
 </style>
